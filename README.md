@@ -1,0 +1,1 @@
+"# minhasresolucoes.github.io" 
