@@ -1,0 +1,1 @@
+REM Receive a date in format YYYYMMDD or as D0(today), D-1(yesterday), etc
