@@ -9,7 +9,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            /*
+            
             var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2017\";
             var baseYear = 2017;
             for (int i = 1; i <= 12; i++)
@@ -55,6 +55,7 @@ namespace ConsoleApplication1
                     builder.AppendLine(@"<p><a href=""index.html""><< " + thisDay.ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("pt")) +  "</a><br /></p>");
                     builder.AppendLine("[ ] Rezar de manhã <br /> <br />");
                     builder.AppendLine("[ ] Á <br /> <br />");
+                    builder.AppendLine("[ ] Exercícios <br /> <br />");
                     builder.AppendLine("[ ] Tese de Mestrado <br /> <br />");
                     builder.AppendLine("[ ] Escovar os dentes <br /> <br />");
 
@@ -91,8 +92,8 @@ namespace ConsoleApplication1
 
                 }
             }
-            */
-
+            
+            /*
             var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2017\";
             var baseYear = 2017;
             for (int i = 1; i <= 12; i++)
@@ -123,6 +124,7 @@ namespace ConsoleApplication1
 
                 File.AppendAllText(basePath + String.Format("{0:00}", i) + @"\index.html", builder.ToString());
 			}
+             */ 
         }
     }
 }
