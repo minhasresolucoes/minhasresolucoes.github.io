@@ -9,26 +9,25 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2016\";
+            /*
+            var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2017\";
+            var baseYear = 2017;
             for (int i = 1; i <= 12; i++)
             {
-                var daysInMonth = DateTime.DaysInMonth(2016, i);
+                var daysInMonth = DateTime.DaysInMonth(baseYear, i);
                 for (int j = 1; j <= daysInMonth; j++)
                 {
 
-                    var fileName = "2016" + $"{i:00}" + $"{j:00}" + ".html";
+                    var fileName = string.Format("{0}{1:00}{2:00}.html", baseYear, i, j);
 
-                    var thisDay = new DateTime(2016, i, j);
+                    var thisDay = new DateTime(baseYear, i, j);
                     var yesterday = thisDay.AddDays(-1);
                     var tomorrow = thisDay.AddDays(+1);
                     var fileNameYesterday = "";
                     var fileNameTomorrow = "";
 
-                    if (yesterday.Year == 2016)
-                        fileNameYesterday = "2016" + $"{yesterday.Month:00}" + $"{yesterday.Day:00}" + ".html";
-                    if (tomorrow.Year == 2016)              
-                        fileNameTomorrow = "2016" + $"{tomorrow.Month:00}" + $"{tomorrow.Day:00}" + ".html";
-
+                    fileNameYesterday = string.Format("{0}{1:00}{2:00}.html", yesterday.Year, yesterday.Month, yesterday.Day);
+                    fileNameTomorrow = string.Format("{0}{1:00}{2:00}.html", tomorrow.Year, tomorrow.Month, tomorrow.Day);
 
                     var builder = new StringBuilder();
 
@@ -55,10 +54,9 @@ namespace ConsoleApplication1
 
                     builder.AppendLine(@"<p><a href=""index.html""><< " + thisDay.ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("pt")) +  "</a><br /></p>");
                     builder.AppendLine("[ ] Rezar de manhã <br /> <br />");
-                    builder.AppendLine("[ ] Rezar de noite <br /> <br />");
                     builder.AppendLine("[ ] Á <br /> <br />");
-                    builder.AppendLine("[ ] Exercícios <br /> <br />");
-                    builder.AppendLine("[ ] Comer <br /> <br />");
+                    builder.AppendLine("[ ] Tese de Mestrado <br /> <br />");
+                    builder.AppendLine("[ ] Escovar os dentes <br /> <br />");
 
                     if (fileNameYesterday != "" || fileNameTomorrow!= "")
                     {
@@ -66,7 +64,7 @@ namespace ConsoleApplication1
                         if (fileNameYesterday != "")
                         {
                             if (thisDay.Month != yesterday.Month)
-                                builder.AppendLine("<a href=\"..\\" + $"{yesterday.Month:00}" + "\\" + fileNameYesterday + "\">ant.</a>");
+                                builder.AppendLine(string.Format("<a href=\"..\\{0:00}\\{1}\">ant.</a>", yesterday.Month, fileNameYesterday));
                             else
                                 builder.AppendLine("<a href=\""  + fileNameYesterday + "\">ant.</a>");
                         }
@@ -77,7 +75,7 @@ namespace ConsoleApplication1
                                 builder.AppendLine(" &nbsp;||&nbsp; ");
                             }
                             if (thisDay.Month != tomorrow.Month)
-                                builder.AppendLine("<a href=\"..\\" + $"{tomorrow.Month:00}" + "\\" + fileNameTomorrow + "\">próx.</a>");
+                                builder.AppendLine(string.Format("<a href=\"..\\{0:00}\\{1}\">próx.</a>", tomorrow.Month, fileNameTomorrow));
                             else
                                 builder.AppendLine("<a href=\"" + fileNameTomorrow + "\">próx.</a>");
                         }
@@ -86,18 +84,21 @@ namespace ConsoleApplication1
 
 
                     builder.AppendLine(@"</section></div></body></html>");
-                    File.Delete(basePath + $"{i:00}" + @"\" + fileName);
-                    File.AppendAllText(basePath + $"{i:00}" + @"\" + fileName, builder.ToString());
+                    if (File.Exists(string.Format("{0}{1:00}\\{2}", basePath, i, fileName)))
+                        File.Delete(string.Format("{0}{1:00}\\{2}", basePath, i, fileName));
+                    Directory.CreateDirectory(string.Format("{0}{1:00}", basePath, i));
+                    File.AppendAllText(string.Format("{0}{1:00}\\{2}", basePath, i, fileName), builder.ToString());
 
                 }
             }
+            */
 
-            /*
-            var basePath=@"C:\Users\sergio.rodrigues\source\minhasresolucoes.github.io\2016\";
+            var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2017\";
+            var baseYear = 2017;
             for (int i = 1; i <= 12; i++)
 			{
-                var daysInMonth = DateTime.DaysInMonth(2016, i);
-                var fullMonthName = new DateTime(2016, i, 1).ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("pt"));
+                var daysInMonth = DateTime.DaysInMonth(baseYear, i);
+                var fullMonthName = new DateTime(baseYear, i, 1).ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("pt"));
 
                 var builder = new StringBuilder();
 
@@ -111,9 +112,9 @@ namespace ConsoleApplication1
 
                 for (int j = 1; j <= daysInMonth; j++)
                 {
-                    var fileName = "2016" + String.Format("{0:00}", i) + String.Format("{0:00}", j) + ".html";
+                    var fileName = baseYear + String.Format("{0:00}", i) + String.Format("{0:00}", j) + ".html";
 
-                    var fileName2 = new DateTime(2016, i, j).ToString("ddd", new System.Globalization.CultureInfo("pt-BR")) + ", " + String.Format("{0:00}", j) + " de " + fullMonthName + " de 2016";
+                    var fileName2 = new DateTime(baseYear, i, j).ToString("ddd", new System.Globalization.CultureInfo("pt-BR")) + ", " + String.Format("{0:00}", j) + " de " + fullMonthName + " de " + baseYear;
 
                     builder.AppendLine("<a href=\"" + fileName+ "\">" + fileName2 + "</a><br />");
                 }
@@ -122,7 +123,6 @@ namespace ConsoleApplication1
 
                 File.AppendAllText(basePath + String.Format("{0:00}", i) + @"\index.html", builder.ToString());
 			}
-             */ 
         }
     }
 }
