@@ -3,3 +3,8 @@ C:\Users\Sérgio\Source\minhasresolucoes.github.io\console\buildResolucoes\bin\D
 C:\Users\Sérgio\Source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Sérgio\Source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.exe
 C:\Users\Sérgio\Source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Users\sgiraldo\source\minhasresolucoes.github.io\console\buildResolucoes\bin\Debug\ConsoleApplication1.exe
+C:\Users\sgiraldo\source\minhasresolucoes.github.io\console\buildResolucoes\bin\Debug\ConsoleApplication1.pdb
+C:\Users\sgiraldo\source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\sgiraldo\source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\sgiraldo\source\minhasresolucoes.github.io\console\buildResolucoes\obj\x86\Debug\ConsoleApplication1.pdb

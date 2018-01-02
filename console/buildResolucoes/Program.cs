@@ -10,8 +10,8 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             
-            var basePath = @"C:\Users\Sérgio\Source\minhasresolucoes.github.io\2017\";
-            var baseYear = 2017;
+            var basePath = @"C:\Users\sgiraldo\source\minhasresolucoes.github.io\2018\";
+            var baseYear = 2018;
             for (int i = 1; i <= 12; i++)
             {
                 var daysInMonth = DateTime.DaysInMonth(baseYear, i);
@@ -53,11 +53,10 @@ namespace ConsoleApplication1
                     builder.AppendLine("<section id=\"main_content\">");
 
                     builder.AppendLine(@"<p><a href=""index.html""><< " + thisDay.ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("pt")) +  "</a><br /></p>");
-                    builder.AppendLine("[ ] Rezar de manhã <br /> <br />");
-                    builder.AppendLine("[ ] Á <br /> <br />");
-                    builder.AppendLine("[ ] Exercícios <br /> <br />");
+                    builder.AppendLine("[ ] Rezar uma vez ao dia <br /> <br />");
+                    builder.AppendLine("[ ] Família <br /> <br />");
+                    builder.AppendLine("[ ] Emagrecer <br /> <br />");
                     builder.AppendLine("[ ] Tese de Mestrado <br /> <br />");
-                    builder.AppendLine("[ ] Escovar os dentes <br /> <br />");
 
                     if (fileNameYesterday != "" || fileNameTomorrow!= "")
                     {
